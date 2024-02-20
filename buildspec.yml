@@ -67,7 +67,7 @@ phases:
     # - aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${REGION}
     - echo "------ changing the providerclass_new_tmp.yml file values ------"
     - cd ../
-    - envsubst < providerclass_tmp.yml > manifests/providerclass.yml
+    - envsubst < providerclass_new_tmp.yml > manifests/providerclass.yml
 
     - echo "------ changing the backend-deploy_tmp.yml file values ------"
     - envsubst < backend-deploy_tmp.yml > manifests/backend-deploy.yml
@@ -95,5 +95,5 @@ phases:
     # check the PAT expiry time before running 
     - git add .
     - git commit -m "pipeline-commit-${CODEBUILD_BUILD_NUMBER}"
-    - git push origin
+    - git push origin main
 
