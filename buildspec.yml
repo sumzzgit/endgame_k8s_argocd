@@ -89,6 +89,8 @@ phases:
 
     - echo "------ setting the github origin ------"
     # - echo "------ applying the manifest files ------"
+    - git config --global user.name sumzz
+    - git config --global user.email test@sumzz.online
     - git remote set-url origin https://${GIT_USER}:${GIT_PAT}@github.com/${GIT_USER}/${GIT_REPO}
     # check the PAT expiry time before running 
     - git add .
