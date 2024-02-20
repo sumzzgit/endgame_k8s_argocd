@@ -1,4 +1,3 @@
-
 apiVersion: secrets-store.csi.x-k8s.io/v1
 kind: SecretProviderClass
 metadata:
@@ -10,27 +9,27 @@ spec:
       - objectName: "endgame" 
         objectType: "secretsmanager"
         jmesPath:
-          - path: admin
-            objectAlias: db_user   
-          - path: password
-            objectAlias: sumit360
-          - path: host
-            objectAlias: database-1.c1waeq4gymb5.ap-south-1.rds.amazonaws.com
-          - path: endgame
+          - path: db_user
+            objectAlias: db_user1   
+          - path: db_pass
+            objectAlias: db_pass1
+          - path: db_host
+            objectAlias: db_host1
+          - path: db
             objectAlias: db
-          - path: http://backend:5000
-            objectAlias: backend_url
+          - path: backend_url
+            objectAlias: backend_url1
   secretObjects:
    - secretName: endgame-secret
      type: Opaque
      data:
-      - objectName: db_user
+      - objectName: db_user1
         key: username_01
-      - objectName: db_pass
+      - objectName: db_pass1
         key: password_01
-      - objectName: db_host
+      - objectName: db_host1
         key: host_01
       - objectName: db
         key: db_01
-      - objectName: backend_url
+      - objectName: backend_url1
         key: backend_url_01
