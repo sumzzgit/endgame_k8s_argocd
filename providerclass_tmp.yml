@@ -6,31 +6,18 @@ metadata:
 spec:
   provider: aws
   parameters:
-    objects: |
-      - objectName: "${SECRET_NAME}" 
-        objectType: "secretsmanager"
-        jmesPath:
-          - path: ${DB_USER}
-            objectAlias: db_user   
-          - path: password
-            objectAlias: ${DB_PASS}
-          - path: host
-            objectAlias: ${DB_HOST}
-          - path: ${DB}
-            objectAlias: db
-          - path: ${BACKEND_URL}
-            objectAlias: backend_url
+    objects: "- objectName: \"${SECRET_NAME}\" \n  objectType: \"secretsmanager\"\n  jmesPath:\n    - path: ${DB_USER}\n      objectAlias: db_user   \n    - path: password\n      objectAlias: ${DB_PASS}\n    - path: host\n      objectAlias: ${DB_HOST}\n    - path: ${DB}\n      objectAlias: db\n    - path: ${BACKEND_URL}\n      objectAlias: backend_url\n"
   secretObjects:
-   - secretName: endgame-secret
-     type: Opaque
-     data:
-      - objectName: db_user
-        key: username_01
-      - objectName: db_pass
-        key: password_01
-      - objectName: db_host
-        key: host_01
-      - objectName: db
-        key: db_01
-      - objectName: backend_url
-        key: backend_url_01
+  - secretName: endgame-secret
+    type: Opaque
+    data:
+    - objectName: db_user
+      key: username_01
+    - objectName: db_pass
+      key: password_01
+    - objectName: db_host
+      key: host_01
+    - objectName: db
+      key: db_01
+    - objectName: backend_url
+      key: backend_url_01
