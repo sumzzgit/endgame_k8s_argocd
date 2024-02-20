@@ -18,7 +18,7 @@ spec:
             objectAlias: database-1.c1waeq4gymb5.ap-south-1.rds.amazonaws.com
           - path: endgame
             objectAlias: db
-          - path: http://backend.endgame.com:5000
+          - path: http://backend:5000
             objectAlias: backend_url
   secretObjects:
    - secretName: endgame-secret
