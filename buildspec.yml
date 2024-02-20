@@ -65,7 +65,7 @@ phases:
 
     # - echo "------ logging into eks ------"
     # - aws eks update-kubeconfig --name ${CLUSTER_NAME} --region ${REGION}
-    - echo "------ changing the providerclass_tmp.yml file values ------"
+    - echo "------ changing the providerclass_new_tmp.yml file values ------"
     - cd ../
     - envsubst < providerclass_tmp.yml > manifests/providerclass.yml
 
