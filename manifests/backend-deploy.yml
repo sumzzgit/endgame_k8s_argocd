@@ -17,7 +17,7 @@ spec:
       serviceAccountName: endgame-svc-account
       containers:
       - name: backend
-        image: 533267334695.dkr.ecr.ap-south-1.amazonaws.com/terraform-backend-repo:latest
+        image: 533267334695.dkr.ecr.ap-south-1.amazonaws.com/terraform-backend-repo:8
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
